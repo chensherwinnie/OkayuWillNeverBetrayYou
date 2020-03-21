@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+//using UnityEngine.Microphone;
 
 /*
  * GOAL:
@@ -55,14 +56,17 @@ public class AudioVisualization : MonoBehaviour
         {
             _isMain = true;
         }
-        /*
+        
         if (Microphone.devices.Length > 0 && _isMain)
         {
-            _audioSource.clip = Microphone.Start(Microphone.devices[0], true, 999, 100);
+            foreach(string device in Microphone.devices)
+            {
+                Debug.Log(device);
+            }
+            _audioSource.clip = Microphone.Start("KLIM Talk", true, 999, 44100);
+            _audioSource.loop = true;
             while (!(Microphone.GetPosition(null) > 0)){}
         }
-        */
-        
         _audioSource.Play();
     }
 
