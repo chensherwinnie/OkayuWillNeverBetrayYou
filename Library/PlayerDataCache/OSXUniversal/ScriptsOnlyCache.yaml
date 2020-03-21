@@ -1,10 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - AudioCubes
+    - AmplitudeCube
     - AudioVisualization
-    - CameraControl
+    - DisplaySongs
+    - FrequencyCubes
+    - GetAllAudioVisualization
     - GlitchEffect
+    - SoundLibrary
     - UIControl
     - UserInput
     Unity.TextMeshPro.dll:
@@ -19,14 +22,19 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
-    - UnityEngine.UI.Toggle
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/MainScene 1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -47,6 +55,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -62,46 +72,64 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9704}
     - Class: 114
-      Script: {instanceID: 9824}
+      Script: {instanceID: 9786}
     - Class: 114
-      Script: {instanceID: 9864}
+      Script: {instanceID: 9856}
     - Class: 114
-      Script: {instanceID: 9972}
+      Script: {instanceID: 9858}
     - Class: 114
-      Script: {instanceID: 10234}
+      Script: {instanceID: 9896}
     - Class: 114
-      Script: {instanceID: 10254}
+      Script: {instanceID: 9994}
     - Class: 114
-      Script: {instanceID: 10294}
+      Script: {instanceID: 10004}
     - Class: 114
-      Script: {instanceID: 10782}
+      Script: {instanceID: 10140}
     - Class: 114
-      Script: {instanceID: 10796}
+      Script: {instanceID: 10184}
     - Class: 114
-      Script: {instanceID: 10956}
+      Script: {instanceID: 10268}
     - Class: 114
-      Script: {instanceID: 11014}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 10408}
     - Class: 114
-      Script: {instanceID: 11354}
+      Script: {instanceID: 10412}
     - Class: 114
-      Script: {instanceID: 11368}
+      Script: {instanceID: 10438}
     - Class: 114
-      Script: {instanceID: 11386}
+      Script: {instanceID: 10612}
     - Class: 114
-      Script: {instanceID: 21330}
+      Script: {instanceID: 10622}
     - Class: 114
-      Script: {instanceID: 27562}
+      Script: {instanceID: 10690}
     - Class: 114
-      Script: {instanceID: 63758}
+      Script: {instanceID: 10700}
     - Class: 114
-      Script: {instanceID: 63960}
+      Script: {instanceID: 10824}
+    - Class: 114
+      Script: {instanceID: 10838}
+    - Class: 114
+      Script: {instanceID: 10954}
+    - Class: 114
+      Script: {instanceID: 11000}
+    - Class: 114
+      Script: {instanceID: 11060}
+    - Class: 114
+      Script: {instanceID: 11206}
+    - Class: 114
+      Script: {instanceID: 11400}
+    - Class: 114
+      Script: {instanceID: 11420}
+    - Class: 114
+      Script: {instanceID: 11434}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -114,6 +142,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -142,6 +176,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 3263ee3714a1ca4c84580f09799698c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DisplaySongs
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -222,7 +262,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: e573d8628fae704f924a9df99b94481e
+      Hash: 6c9344ef884852e61b0870a5f5229cc4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AudioVisualization
@@ -262,6 +302,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 7d45d396f5b555a6bbbe13e87341ebc0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIControl
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -318,6 +364,18 @@ ScriptsOnlyBuild:
     className: AudioCubes
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GetAllAudioVisualization
+  - hash:
+      serializedVersion: 2
+      Hash: a75eb88f0432ae8d9b17fb15e6bf8823
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AmplitudeCube
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -360,10 +418,22 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: f08d72c9d8f86cc47a66360963668296
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FrequencyCubes
+  - hash:
+      serializedVersion: 2
       Hash: feb9a5a121d15fa3654d4e50a5233045
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 1b6e223baed9ca701ab2459833c45ef8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UserInput
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -420,10 +490,22 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundLibrary
+  - hash:
+      serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 2d93fa3ff86ab0478d0c59da570c251f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraControl
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -528,6 +610,12 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
+      Hash: 3a23b3b7a5653d66d83d69f7e1576a87
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GlitchEffect
+  - hash:
+      serializedVersion: 2
       Hash: 7072231382eb3c4871b3dd75ad0227e1
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -544,31 +632,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 7d45d396f5b555a6bbbe13e87341ebc0
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIControl
-  - hash:
-      serializedVersion: 2
-      Hash: 7954c3defeca860ab14a8207a4122704
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CameraControl
-  - hash:
-      serializedVersion: 2
-      Hash: 1b6e223baed9ca701ab2459833c45ef8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UserInput
-  - hash:
-      serializedVersion: 2
-      Hash: 3a23b3b7a5653d66d83d69f7e1576a87
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GlitchEffect
   platform: 2
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/MainScene 1.unity
   playerPath: /Users/sherwinnie/Desktop/OkayuWillNeverBetrayYou.app

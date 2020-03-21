@@ -6,11 +6,11 @@ public class UserInput : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     [SerializeField] GlitchEffect glitchEffect;
-    private AudioSource _audioSource;
+    private AudioVisualization[] _audioSource;
 
     private void Start()
     {
-        _audioSource = FindObjectOfType<AudioSource>();
+        _audioSource = GetAllAudioVisualization.AudioVisualizations;
         glitchEffect = FindObjectOfType<GlitchEffect>();
 
     }
@@ -29,17 +29,35 @@ public class UserInput : MonoBehaviour
             Resume();
     }
 
+    private void PlayAudio(bool play)
+    {
+        if (play)
+        {
+            for(int i = 0; i < _audioSource.Length; i++)
+            {
+                _audioSource[i]._audioSource.Play();
+            }
+        }
+        else
+        {
+            for (int i = 0; i < _audioSource.Length; i++)
+            {
+                _audioSource[i]._audioSource.Stop();
+            }
+        }
+    }
+
     private void Resume()
     {
         GameIsPaused = false;
         ChangeGlitchSetting(false);
-        _audioSource.Play();
+        PlayAudio(true);
     }
     private void Pause()
     {
         GameIsPaused = true;
         ChangeGlitchSetting(true);
-        _audioSource.Pause();
+        PlayAudio(false);
     }
 
     private void ChangeGlitchSetting(bool on)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+
 /*
  * GOAL:
  *  1. Have the main samples, which has the size of 512. Update them
@@ -18,6 +19,9 @@ using UnityEngine.Audio;
 [RequireComponent(typeof(AudioSource))]
 public class AudioVisualization : MonoBehaviour
 {
+    [SerializeField] AudioMixerGroup MainGroup;
+    [SerializeField] AudioMixerGroup MicrophoneGroup;
+
     public float[] _samples;
     private const int _numberOfSamples = 512;
 
@@ -28,11 +32,10 @@ public class AudioVisualization : MonoBehaviour
 
     public float[] FrequencySamples;
     
-
     public float _samplesAverage;
     public float Average;
 
-    private AudioSource _audioSource;
+    public AudioSource _audioSource;
     private bool _isMain;
 
     // Start is called before the first frame update
@@ -46,30 +49,29 @@ public class AudioVisualization : MonoBehaviour
         FrequencySamples = new float[_numberOfFrequencySamples];
 
         _audioSource = GetComponent<AudioSource>();
-        if(this.name == "Main AudioSource")
+
+        
+        if (this.name == "Main AudioSource")
         {
             _isMain = true;
         }
-
-        if(Microphone.devices.Length > 0 && _isMain)
+        /*
+        if (Microphone.devices.Length > 0 && _isMain)
         {
-            foreach(string mic in Microphone.devices)
-            {
-                Debug.Log(mic);
-            }
-            _audioSource.clip = Microphone.Start("External Microphone", true, 10, 44100);
-            Debug.Log(_audioSource.isPlaying);
-            _audioSource.Play();
-            Debug.Log(_audioSource.isPlaying);
+            _audioSource.clip = Microphone.Start(Microphone.devices[0], true, 999, 100);
+            while (!(Microphone.GetPosition(null) > 0)){}
         }
+        */
+        
+        _audioSource.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
         GenerateMainSamples();
-        //GenerateFrequencySamples();
-        //GenerateAverage();
+        GenerateFrequencySamples();
+        GenerateAverage();
     }
 
     void GenerateMainSamples()
@@ -108,9 +110,7 @@ public class AudioVisualization : MonoBehaviour
     void UpdateHighestFrequency()
     {
         for(int i = 0; i < _privateFrequencySamples.Length; i++)
-        {
             _highestFrequencySamples[i] = _privateFrequencySamples[i] > _highestFrequencySamples[i] ? _privateFrequencySamples[i] : _highestFrequencySamples[i];
-        }
     }
 
     void GenerateFrequencyBuffer()
@@ -144,8 +144,20 @@ public class AudioVisualization : MonoBehaviour
         }
         else if(_samplesAverage < Average)
         {
-            Average *= 0.9f;
+            Average *= 0.95f;
         }
     }
 
+    public void ChangeClip(string newSong)
+    {
+        Debug.Log(newSong);
+        _audioSource.Stop();
+        _audioSource.clip = Resources.Load<AudioClip>("Audio/BackgroundMusic/" + newSong);
+        _audioSource.Play();
+    }
+
+    public void AdjustVolume(float newVolume)
+    {
+        _audioSource.volume = newVolume;
+    }
 }

@@ -57,4 +57,5 @@ public class AmplitudeCube : MonoBehaviour
 
         cube.cube.transform.localScale = new Vector3(xDimension, yDimension, zDimension);
     }
+    
 }

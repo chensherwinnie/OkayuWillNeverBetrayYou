@@ -23,7 +23,7 @@ public class UIControl : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = FindObjectOfType<AudioSource>();
+        _audioSource = GetAllAudioVisualization.AudioVisualizations[1]._audioSource;
         LastMousePosition = Input.mousePosition;
 
         UI = FindObjectOfType<Canvas>().gameObject;
@@ -34,7 +34,9 @@ public class UIControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(LastMousePosition != Input.mousePosition)
+        SongTitle.text = _audioSource.clip.name;
+
+        if (LastMousePosition != Input.mousePosition)
         {
             UIDormantTime = 3f;
         }
