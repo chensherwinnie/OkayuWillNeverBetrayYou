@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,7 +169,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &197377844
 GameObject:
@@ -202,8 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _samples: []
-  _frequencySamples: []
+  FrequencySamples: []
   _samplesAverage: 0
+  Average: 0
 --- !u!82 &197377846
 AudioSource:
   m_ObjectHideFlags: 0
@@ -216,7 +217,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 228ce263c1d8c43a8a052fe9f134e71e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.49
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -308,7 +309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197377844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.117244, y: 0.5026367, z: 100}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1075780435}
@@ -340,7 +341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344814007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.117244, y: 0.5026367, z: 100}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1075780435}
@@ -359,8 +360,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _samples: []
-  _frequencySamples: []
+  FrequencySamples: []
   _samplesAverage: 0
+  Average: 0
 --- !u!82 &344814010
 AudioSource:
   m_ObjectHideFlags: 0
@@ -491,7 +493,7 @@ Light:
   m_InnerSpotAngle: 21.802082
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -530,7 +532,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.6130267e+25, z: 1e-45, w: 0}
+  m_BoundingSphereOverride: {x: 0.03125, y: 0.10546875, z: 0.03125, w: -0.03515625}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -574,16 +576,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 869970968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 068cfba83350a4dd3a978798daee12e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 30561a76bb4f94e0b820d843348ae697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _CubePrefeb: {fileID: 8917967674867550971, guid: 7a3fd5bb0bedb48e3bd56a3ee3dbcf05,
     type: 3}
   AudioSourceIndex: 1
-  Height: 15
+  Height: 20
   CubeLengthX: -1
   CubeLengthZ: 0.01
-  BaseSize: 5
+  BaseSize: 4.5
   ExpandXDimension: 1
   ExpandZDimension: 0
 --- !u!4 &869970970
@@ -598,7 +600,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -854,7 +856,7 @@ MonoBehaviour:
   AudioSourceIndex: 0
   Height: 15
   CubeLengthX: 0.5
-  CubeLengthZ: 0.5
+  CubeLengthZ: 0.2
   IntervalDistance: 1
   BaseHeight: 0.2
 --- !u!4 &1293139987
@@ -935,7 +937,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067012499
 GameObject:
@@ -1014,7 +1016,7 @@ PrefabInstance:
     - target: {fileID: 2258251780868472326, guid: 1528f34cac60544ca9849dcf95f21948,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2258251780868472326, guid: 1528f34cac60544ca9849dcf95f21948,
         type: 3}
@@ -1113,7 +1115,7 @@ PrefabInstance:
     - target: {fileID: 2261397791738156612, guid: 853e7bb40bf414cfeb2b87099055da21,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2261397791738156612, guid: 853e7bb40bf414cfeb2b87099055da21,
         type: 3}
@@ -1267,7 +1269,7 @@ PrefabInstance:
     - target: {fileID: 7689408113785920378, guid: 9869a5e94895f4816a817f33890fb3c6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7689408113785920378, guid: 9869a5e94895f4816a817f33890fb3c6,
         type: 3}

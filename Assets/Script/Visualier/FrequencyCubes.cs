@@ -27,7 +27,7 @@ public class FrequencyCubes : MonoBehaviour
 
     private void Start()
     {
-        _Cubes = new Cube[GetAllAudioVisualization.AudioVisualizations[AudioSourceIndex]._frequencySamples.Length];
+        _Cubes = new Cube[GetAllAudioVisualization.AudioVisualizations[AudioSourceIndex].FrequencySamples.Length];
         CubeLength = 1f;
 
         CubeLengthX = CubeLengthX < 0 ? CubeLength : CubeLengthX;
@@ -57,6 +57,6 @@ public class FrequencyCubes : MonoBehaviour
     private void AdjustHeight()
     {
         for (int i = 0; i < _Cubes.Length; i++)
-            _Cubes[i].cube.transform.localScale = new Vector3(CubeLengthX, GetAllAudioVisualization.AudioVisualizations[AudioSourceIndex]._frequencySamples[i] * Height + BaseHeight, CubeLengthZ);
+            _Cubes[i].cube.transform.localScale = new Vector3(CubeLengthX, GetAllAudioVisualization.AudioVisualizations[AudioSourceIndex].FrequencySamples[i] * Height + BaseHeight, CubeLengthZ);
     }
 }

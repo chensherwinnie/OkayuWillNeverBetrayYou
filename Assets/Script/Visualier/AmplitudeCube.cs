@@ -50,7 +50,7 @@ public class AmplitudeCube : MonoBehaviour
 
     private void AdjustHeight()
     {
-        float yDimension = GetAllAudioVisualization.AudioVisualizations[AudioSourceIndex]._samplesAverage * Height + BaseSize;
+        float yDimension = GetAllAudioVisualization.AudioVisualizations[AudioSourceIndex].Average * Height + BaseSize;
 
         float xDimension = ExpandXDimension ? yDimension : CubeLengthX;
         float zDimension = ExpandZDimension ? yDimension : CubeLengthZ;
