@@ -7,7 +7,7 @@
       <File FileName="Assets/Script/UIControl.cs" />
       <File FileName="Assets/SoundLibrary.cs" />
       <File FileName="Assets/DisplaySongs.cs" />
-      <File FileName="Assets/Script/UserInput.cs" Line="9" Column="26" />
+      <File FileName="Assets/Script/UserInput.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0f412b1e-6b46-4045-ad5a-b22c986dd6ac" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bfb52356-bccd-4da6-a170-578b8c65e7aa" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
